@@ -1,0 +1,59 @@
+<header class="row page-header">
+    <div class="page-header-container">
+        <ul class="lg-col-span-12 page-header-filter">
+            <li>
+                <div class="page-select-container">
+
+                    <selector onOption={{onType}} options={{types}} option={{type}} />
+
+                </div>
+              </li>
+              <li>                        
+                <div class="page-select-container">
+
+                    <selector onOption={{onArticle}} options={{articles}} option={{article}} />
+                    
+                    <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
+                </div>
+              </li>
+          </ul>
+      </div>
+</header>
+<article class="row articles-content">                    
+    <div class="articles-content-container">
+        <div class="marker left">
+            <div class="marker-container"></div>
+            <div class="marker-arrow" onclick="onPrevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+        </div>
+        <div class="marker right">
+            <div class="marker-container"></div>
+            <div class="marker-arrow" onclick="onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+        </div>
+        <div class="articles-content-cols">
+            <div class="lg-col-span-3 articles-content-col"></div>
+            <div class="lg-col-span-3 articles-content-col"></div>
+            <div class="lg-col-span-3 articles-content-col"></div>
+            <div class="lg-col-span-3 articles-content-col"></div>
+        </div>
+    </div>                          
+</article>
+<footer class="row articles-footer">
+    <div class="articles-footer-container">
+        <div class="lg-col-span-12 articles-footer-content">
+            PAGE <span id="articles-page-number">1</span>
+        </div>
+    </div>
+</footer>
+
+<div id="hiddenTxt" style="display: none">{{file}}</div>
+
+<script>     
+    // Sets the columns of the magazine using the page algorithm
+    var number_of_columns = 4;
+    var desired_column_height = 510; // in pxs
+    var identifier = '.articles-content-col'
+
+    PageAlgo.initialise(number_of_columns, desired_column_height, identifier);  
+    
+    PageAlgo.First();        // go to first page
+</script>

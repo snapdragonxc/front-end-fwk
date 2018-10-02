@@ -1,0 +1,38 @@
+<header class="row page-header">
+    <div class="page-header-container">
+        <ul class="lg-col-span-12 page-header-filter">
+            <li>
+                <div class="page-select-container">
+
+                    <selector onOption={{onType}} options={{types}} option={{type}} />
+
+                </div>
+            </li>
+            <li>                        
+                <div class="page-select-container">
+                    
+                    <selector onOption={{onModel}} options={{models}} option={{model}} />
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+<article class="row photos-content">  
+    <div class="marker left">
+        <div class="marker-container photos"></div>
+        <div class="marker-arrow photos" onclick="onPrevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+    </div>
+    <div class="marker right">
+        <div class="marker-container photos"></div>
+        <div class="marker-arrow photos" onclick="onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+    {{display}}          
+</article>
+<footer class="row photos-footer">
+    <div class="photos-footer-container">
+        <div class="lg-col-span-12 photos-footer-content">
+            PAGE {{page}} OF {{pages}}
+        </div>
+    </div>
+</footer>

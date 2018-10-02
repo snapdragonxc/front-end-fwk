@@ -46,7 +46,7 @@
             <!-- Sub Nav -->
             <nav class="row site-header-sub-nav">
                 <div class="lg-col-span-6 site-header-sub-nav-left">
-                    <h2>LAST UPDATED: FEBRUARY 2018</h2>
+                    <h2>LAST UPDATED: OCTOBER 2018</h2>
                 </div>
                 <div class="lg-col-span-6 site-header-sub-nav-right">
                     <ul>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="lg-col-span-3 site-header-nav-right">
                     <form class="site-header-nav-right-search" onsubmit="search(event)">
-                        <input id="query" type="text" class="search-field" placeholder="SEARCH..." autocomplete="off" autocorrect="off" spellcheck="false">
+                        <input id="query" type="text" class="search-field" placeholder="SEARCH..." autocomplete="off" autocorrect="off" spellcheck="false" required>
                         <button type='submit'><i class='fa fa-search'></i></button>
                     </form>
                 </div>
@@ -121,6 +121,9 @@
      var search = function(event){
        event.preventDefault();
        var query = document.getElementById("query").value;
+       if (query === '') {
+         return;
+       }
        app.http('GET', 'SearchPage/' + query);
        document.getElementById("query").value = '';
      }

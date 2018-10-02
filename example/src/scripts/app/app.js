@@ -87,10 +87,6 @@ app.post('/Specs', function(params, state){
 
 app.get('/Photos/:action/:type/:model/:page', function(params, state){
 
-  console.log('pp', params, state)
-
-  console.log(params.action);
-
     switch(params.action){
         case 'NEW_TYPE':
             state.models = [];
@@ -125,7 +121,6 @@ app.get('/Photos/:action/:type/:model/:page', function(params, state){
             state.render('Photos', photos);
             break;
         default:
-        console.log('kk')
             params.type = 'GSXR-400';
             params.model = 'GK71B (1984)';
             state.type = params.type;
@@ -225,7 +220,6 @@ app.get('/Articles/:action/:type/:article', function(params, state){
 });
 
 app.get('/SearchPage/:query', function(params, state){
-    console.log('ss', state, params)
 
     state.query = params.query;
 

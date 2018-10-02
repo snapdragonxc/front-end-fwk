@@ -178,10 +178,7 @@ var service = {
 
         });
 
-        console.log('tt', type, res)
-
         return res;
-
     },
 
     getSpecs: function(type, model) {
